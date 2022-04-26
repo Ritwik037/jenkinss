@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t sample:latest .'
+        sh 'docker build -t ritwik72/sample:latest .'
       }
     }
     stage('Login') {
