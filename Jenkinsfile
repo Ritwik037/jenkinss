@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push sample:latest'
+        sh 'docker push ritwik72/sample:latest'
         
       }
     }
