@@ -5,20 +5,20 @@ pipeline {
     docker_credentials = credentials('docker_credentials')
   }
   stages {
-    // stage('Build') {
-    //   steps {
-    //     sh 'docker build -t sample:latest .'
-    //   }
-    // }
-    // stage('Login') {
-    //   steps {
-    //     sh 'docker login -u' 
-    //   }
-    // }
+    stage('Build') {
+      steps {
+        sh 'docker build -t sample:latest .'
+      }
+    }
+    stage('Login') {
+      steps {
+        sh 'echo $docker_credentials_PSW | docker login -u $docker_credentials_USR --password-stdin'
+      }
+    }
     stage('Push') {
       steps {
-        sh 'echo $docker_credentials_PSW'
-        sh 'echo $docker_credentials_USR'
+        sh 'docker push ritwik72/sample:latest'
+        
       }
     }
   }
