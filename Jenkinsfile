@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'linux' }
+  agent any
  
   environment {
     docker_credentials = credentials('docker_credentials')
