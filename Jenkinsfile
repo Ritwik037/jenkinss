@@ -1,9 +1,9 @@
 // pipeline {
 //   agent any
  
-   environment {
-     docker_credentials = credentials('docker_credentials')
-   }
+//    environment {
+//      docker_credentials = credentials('docker_credentials')
+//    }
 //   stages {
 //     stage('Build') {
 //       steps {
