@@ -31,32 +31,21 @@
 // //   }
 // // }
 
-@Library('docker_library') _
 
+@Library('docker_library')
 
-
-pipeline {
-
+pipeline{
     agent any
+  environment{
+      credentials= docker-credentials('docker-credentials')
 
-    stages {
+  }  
+  stages{
+      stage(docker-build-push){
+          steps{
+              welcome()
+          }
 
-        stage('Example') {
-
-            steps {
-
-                welcome()
-
-            }
-
-        }
-
-        stage('testing') {
-            steps {
-                sh 'echo $BUILD_NUMBER'
-            }
-        }
-
-    }
-
+      }
+  }
 }
