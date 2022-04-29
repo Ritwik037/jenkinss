@@ -45,7 +45,7 @@ pipeline {
 
             steps {
 
-                call()
+                welcome()
 
             }
 
