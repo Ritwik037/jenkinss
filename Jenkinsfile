@@ -51,11 +51,11 @@ pipeline {
 
         }
 
-//         stage('testing') {
-//             steps {
-//                 sh 'echo $BUILD_NUMBER'
-//             }
-//         }
+        stage('testing') {
+            steps {
+                sh 'echo $BUILD_NUMBER'
+            }
+        }
 
     }
 
