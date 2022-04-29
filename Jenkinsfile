@@ -37,11 +37,11 @@
 pipeline {
     agent any
   environment {
-      credentials= docker-credentials('docker-credentials')
+      docker_credentials = credentials('docker_credentials')
 
   }  
   stages {
-      stage(docker-build-push) {
+      stage('docker-build-push') {
           steps {
               welcome()
           }
