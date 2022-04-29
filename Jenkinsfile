@@ -34,15 +34,15 @@
 
 @Library('docker_library')
 
-pipeline{
+pipeline {
     agent any
-  environment{
+  environment {
       credentials= docker-credentials('docker-credentials')
 
   }  
-  stages{
-      stage(docker-build-push){
-          steps{
+  stages {
+      stage(docker-build-push) {
+          steps {
               welcome()
           }
 
