@@ -43,7 +43,7 @@ pipeline {
   stages {
       stage('docker-build-push') {
           steps {
-              welcome('docker_credentials')
+              welcome(username:"docker_credentials_USR",password:"docker_credentials_PSW")
           }
 
       }
