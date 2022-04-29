@@ -31,17 +31,13 @@
 // //   }
 // // }
 
-@Library('docker_library') _
+@Library('shared-library') _
 
 
 
 pipeline {
 
     agent any
- 
- environment {
-     docker_credentials = credentials('docker_credentials')
-   }
 
     stages {
 
@@ -53,6 +49,12 @@ pipeline {
 
             }
 
+        }
+
+        stage('testing') {
+            steps {
+                sh 'echo $BUILD_NUMBER'
+            }
         }
 
     }
